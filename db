@@ -1,0 +1,29 @@
+CREATE DATABASE projeto_final;
+
+CREATE TABLE cadastro_pessoas (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(255) NOT NULL,
+    sobrenome VARCHAR(255) NOT NULL,
+    data_nascimento DATE,
+    email VARCHAR(255) UNIQUE NOT NULL, -- Email deve ser único
+    senha VARCHAR(255) NOT NULL, -- Para armazenar o hash da senha
+    cpf VARCHAR(14) UNIQUE, -- CPF também pode ser UNIQUE
+    aceitar_termos ENUM('sim', 'nao') NOT NULL DEFAULT 'nao',
+    data_cadastro TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+ALTER TABLE cadastro_pessoas MODIFY COLUMN senha VARCHAR(255) NOT NULL;
+
+select * from cadastro_pessoas;
+
+CREATE TABLE agendamentos (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    profissional_id INT NOT NULL,
+    nome_cliente VARCHAR(255) NOT NULL,
+    contato_cliente VARCHAR(100),
+    servico TEXT,
+    data_hora DATETIME NOT NULL,
+    status VARCHAR(50) DEFAULT 'Agendado',
+    data_criacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (profissional_id) REFERENCES cadastro_pessoas(id)
+);

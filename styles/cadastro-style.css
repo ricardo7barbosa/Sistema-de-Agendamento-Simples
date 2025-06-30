@@ -1,0 +1,129 @@
+/* --- ESTILOS GERAIS --- */
+body {
+    background-color: #f4f4f4;
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 40px 0; /* Adicionado para evitar que o form corte em telas menores */
+}
+
+/* --- CAIXA PRINCIPAL DO CADASTRO --- */
+.signup-box {
+    background-color: white;
+    width: 100%;
+    max-width: 700px; /* Maior que o login para comportar mais campos */
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.signup-box h2 {
+    color: #333;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+/* --- FORMULÁRIO --- */
+.signup-box form {
+    display: grid;
+    gap: 16px; /* Espaçamento entre os grupos de campos */
+}
+
+/* Informação de campos obrigatórios */
+.required-info {
+    font-size: 12px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+/* Linha do formulário com duas colunas */
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+/* Grupo de um campo (label + input) */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.form-group label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #555;
+}
+
+/* Estrela vermelha para campos obrigatórios */
+.required-star {
+    color: #e74c3c;
+    font-weight: bold;
+}
+
+/* Estilo para todos os inputs de texto, email, senha, etc. */
+.signup-box input[type="text"],
+.signup-box input[type="email"],
+.signup-box input[type="password"],
+.signup-box input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    outline: none;
+    box-sizing: border-box; /* Garante que o padding não afete a largura total */
+}
+
+.signup-box input:focus {
+    border-color: #004853; /* Mesma cor de foco da tela de login */
+}
+
+/* Grupo dos termos de uso (checkbox e texto) */
+.terms-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: #333;
+}
+
+/* .terms-group input[type="checkbox"] {
+
+} */
+
+.terms-group a {
+    color: #004853; /* Usando a cor principal para o link */
+    text-decoration: none;
+}
+
+.terms-group a:hover {
+    text-decoration: underline;
+}
+
+
+/* Div para alinhar o botão à direita */
+.form-actions {
+    text-align: right;
+    margin-top: 10px;
+}
+
+/* Botão de submit */
+.signup-box button[type="submit"] {
+    background-color: #004853; /* Mesma cor do botão de login */
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.signup-box button[type="submit"]:hover {
+    opacity: 0.9; /* Mesmo efeito hover do login */
+}
